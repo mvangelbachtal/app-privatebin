@@ -1,0 +1,18 @@
+services:
+  privatebin:
+    image: privatebin/unit-alpine:latest
+    restart: unless-stopped
+    environment:
+      VIRTUAL_HOST: p.mv-angelbachtal.de,paste.mv-angelbachtal.de,privatebin.mv-angelbachtal.de
+      LETSENCRYPT_HOST: p.mv-angelbachtal.de,paste.mv-angelbachtal.de,privatebin.mv-angelbachtal.de
+      TZ: Europe/Berlin
+    volumes:
+      - ./data:/srv/data
+      - ./conf.php:/srv/cfg/conf.php:ro
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
+
