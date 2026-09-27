@@ -7,7 +7,7 @@ services:
       LETSENCRYPT_HOST: p.mv-angelbachtal.de,paste.mv-angelbachtal.de,privatebin.mv-angelbachtal.de
       TZ: Europe/Berlin
     volumes:
-      - ./data:/srv/data
+      - data:/srv/data
       - ./conf.php:/srv/cfg/conf.php:ro
     networks:
       - proxy
@@ -15,4 +15,7 @@ services:
 networks:
   proxy:
     external: true
+
+volumes:
+  data:
 
