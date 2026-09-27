@@ -1,6 +1,6 @@
 services:
   privatebin:
-    image: privatebin/unit-alpine:latest
+    image: privatebin/unit-alpine:2.0.6
     restart: unless-stopped
     environment:
       VIRTUAL_HOST: p.mv-angelbachtal.de,paste.mv-angelbachtal.de,privatebin.mv-angelbachtal.de
